@@ -14,5 +14,9 @@ include <tunables/global>
   /proc/version rw,
   /proc/buddyinfo rw,
   /etc/crontab rw,
-  /etc/resolv.conf rwm,
+  /run/systemd/resolve/stub-resolv.conf rwm,
+  /etc/passwd rwm,
+  /etc/hosts rwm,
+  /home/aidan/template rwm,
+  network tcp,
 }
