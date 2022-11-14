@@ -7,16 +7,26 @@ include <tunables/global>
   include <abstractions/base>
   include <abstractions/user-tmp>
   
-  /home/aidan/p2 mr,
-  /home/aidan/.project2/config rwm,
-  /var/log/syslog rw,
-  /etc/fstab rw,
-  /proc/version rw,
-  /proc/buddyinfo rw,
-  /etc/crontab rw,
-  /run/systemd/resolve/stub-resolv.conf rwm,
-  /etc/passwd rwm,
-  /etc/hosts rwm,
-  /home/aidan/template rwm,
+  /home/aidan/p2 r,
+  /home/aidan/.project2/config wr,
+  /var/log/syslog r,
+  /etc/fstab r,
+  /proc/version r,
+  /proc/buddyinfo r,
+  /proc/uptime r,
+  /etc/crontab r,
+  /etc/hostid r,
+  /etc/timezone r,
+  /run/systemd/resolve/stub-resolv.conf r,
+  /etc/passwd r,
+  /etc/hosts r,
+  /home/aidan/template r,
   network tcp,
+  /tmp/project* r,
+ 
+  
+  deny @{PROC}/meminfo r,
+  deny @{PROC}/stat r,
+  deny /etc/{libao.conf,host.conf,profile,inputrc} r,
+  deny /etc/{login.defs,nsswitch.conf,bash_completion} r,
 }
